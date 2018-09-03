@@ -1,0 +1,34 @@
+{
+  "name": "assistant-and-discovery-demo",
+  "version": "1.0.0",
+  "description": "Simples aplicacao onde integramos o Watson Assistant com Watson Discovery",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/",
+    "dev": "nodemon server/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibm-code-br/Assistant-and-Discovery-Demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibm-code-br/Assistant-and-Discovery-Demo/issues"
+  },
+  "homepage": "https://github.com/ibm-code-br/Assistant-and-Discovery-Demo#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "helmet": "^3.13.0",
+    "morgan": "^1.9.0",
+    "shrink-ray": "^0.1.3",
+    "watson-developer-cloud": "^3.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
