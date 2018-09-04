@@ -61,7 +61,11 @@ app.post('/api/message', (req, res, next) => {
     const msg = req.body.input;
     const context = req.body.context;
     watson.assistant.message(msg, context)
-        .then((resp) => res.json(resp))
+        .then((responseAssistant) => {
+            require('./handlers').addDiscoveryResponse(responseAssistant, msg)
+                .then((finalResult) => res.json(finalResult))
+                .catch((err) => next({err, status: 500, msg: 'Error on Watson Discovery Request'}))
+        })
         .catch(err => next({err, status: 500, msg: 'Error on Watson Assistant Request'}))
 });
 
