@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ibm-code-br/Assistant-and-Discovery-Demo#readme",
   "dependencies": {
+    "async": "^2.6.1",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "dotenv": "^6.0.0",

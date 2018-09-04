@@ -1,5 +1,10 @@
+/**
+ * Arquivo de controle e conexao com Watson Assistant
+ */
+
 const Assistant = require('watson-developer-cloud/assistant/v1');
 
+// Autenticacao no Assistant
 const assistantClient = new Assistant({
     username: process.env.ASSISTANT_USERNAME,
     password: process.env.ASSISTANT_PASSWORD,
@@ -8,16 +13,17 @@ const assistantClient = new Assistant({
 
 const assistant = {
     message: (msg, ctx) => {
-        console.log(msg);
+        // Ligacao com workspace e montagem dos parametros de requisicao
         const req = {
             workspace_id: process.env.ASSISTANT_WORKSPACE,
             input: msg,
             context: ctx || null
         }
         return new Promise((resolve, reject) => {
+            // envia a messagem com Assistant
             assistantClient.message(req, (err, resp) => {
                 if(err){
-                    return reject(err);
+                    reject(err);
                 } else {
                     resolve(resp);
                 }

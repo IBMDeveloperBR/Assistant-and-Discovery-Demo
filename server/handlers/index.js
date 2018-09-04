@@ -1,3 +1,7 @@
+/**
+ * Menu de Handlers
+ */
 module.exports = {
-    'addDiscoveryResponse': require('./addDiscoveryResponse')
+    'addDiscoveryResponse': require('./addDiscoveryResponse'),
+    'buildDiscoveryMessages': require('./buildDiscoveryMessages')
 }

@@ -56,7 +56,7 @@ if(ENV === 'production'){
     });
 }
 
-// Endpoint to be call from the client side
+// Rota que sera consumida pelo front para obter respostas do chatbot
 app.post('/api/message', (req, res, next) => {
     const msg = req.body.input;
     const context = req.body.context;
