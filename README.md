@@ -35,3 +35,7 @@ O objetivo dessa aplicação é demostrar como integrar o serviço do Watson Dis
   * `localhost:8000/api/message`: rota do orquestrador para recebimento de mensagens.
 
 ## Deploy 
+
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/ibm-code-br/Assistant-and-Discovery-Demo)
+
+Use o Eclipse Online e Edite o arquivo `.env` com suas credencias do Watson, depois disso rode o pipeline novamente.
