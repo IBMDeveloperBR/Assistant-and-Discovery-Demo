@@ -1,0 +1,7 @@
+---
+applications:
+- name: pcastro-SuperPizza
+  command: npm start
+  path: .
+  memory: 128M
+  instances: 1

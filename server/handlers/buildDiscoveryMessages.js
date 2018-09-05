@@ -10,8 +10,8 @@ module.exports = (discoveryOutput) => {
         let resp = [];
         let docFound = false;
         async.eachSeries(discoveryOutput.results, (result, cb) => {
-            // so considera valores acima de 60%            
-            if(result.result_metadata.score > .6){
+            // so considera valores acima de 25%            
+            if(result.result_metadata.score > .25){
                 docFound = true;
                 resp.push(result.html);
             }

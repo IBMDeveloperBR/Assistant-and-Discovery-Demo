@@ -4,7 +4,7 @@
   "description": "Simples aplicacao onde integramos o Watson Assistant com Watson Discovery",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/",
+    "start": "node server/index.js",
     "dev": "nodemon server/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
