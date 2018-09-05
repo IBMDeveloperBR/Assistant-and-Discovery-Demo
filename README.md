@@ -34,8 +34,13 @@ O objetivo dessa aplicação é demostrar como integrar o serviço do Watson Dis
   * `localhost:8000`: endpoint backend
   * `localhost:8000/api/message`: rota do orquestrador para recebimento de mensagens.
 
-## Deploy 
+## Deploy na IBM Cloud
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/ibm-code-br/Assistant-and-Discovery-Demo)
 
-Use o Eclipse Online e Edite o arquivo `.env` com suas credencias do Watson, depois disso rode o pipeline novamente.
+**Lembre-se de criar sua IAM Key clicando no botão Create**
+
+Após clicar no botão acima:
+
+* Use o Eclipse Orion Web IDE e Edite o arquivo `.env` com suas credencias do Watson;
+* depois disso volte uma página, clique em Delivery Pipeline e logo após no botão Play dentro de BUILD STAGE.
