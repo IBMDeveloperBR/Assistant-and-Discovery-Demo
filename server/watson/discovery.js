@@ -2,15 +2,18 @@
  * Arquivo de controle e conexao com Watson Discovery
  */
 const Discovery = require('watson-developer-cloud/discovery/v1');
-var exec = require('child_process').exec;
 
-// Autenticacao com Watson Discovery
-var discoveryClient = new Discovery({
-    version: '2018-08-01',
-    username: process.env.DISCOVERY_USERNAME,
-    password: process.env.DISCOVERY_PASSWORD,
-});
+let discoveryClient;
 
+if(process.env.DISCOVERY_USERNAME && process.env.DISCOVERY_PASSWORD 
+    && process.env.DISCOVERY_ENV && process.env.DISCOVERY_COLLECTION){
+    // Autenticacao com Watson Discovery
+    discoveryClient = new Discovery({
+        version: '2018-08-01',
+        username: process.env.DISCOVERY_USERNAME,
+        password: process.env.DISCOVERY_PASSWORD,
+    });
+}
 const discovery = {
     query: (msg) => {
         // montagem da Query de requisicao para o Discovery

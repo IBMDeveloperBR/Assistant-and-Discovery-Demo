@@ -62,9 +62,14 @@ app.post('/api/message', (req, res, next) => {
     const context = req.body.context;
     watson.assistant.message(msg, context)
         .then((responseAssistant) => {
-            require('./handlers').addDiscoveryResponse(responseAssistant, msg)
-                .then((finalResult) => res.json(finalResult))
-                .catch((err) => next({err, status: 500, msg: 'Error on Watson Discovery Request'}))
+            if(process.env.DISCOVERY_USERNAME && process.env.DISCOVERY_PASSWORD 
+                && process.env.DISCOVERY_ENV && process.env.DISCOVERY_COLLECTION){
+                require('./handlers').addDiscoveryResponse(responseAssistant, msg)
+                    .then((finalResult) => res.json(finalResult))
+                    .catch((err) => next({err, status: 500, msg: 'Error on Watson Discovery Request'}))
+            } else {
+                res.json(responseAssistant);
+            }
         })
         .catch(err => next({err, status: 500, msg: 'Error on Watson Assistant Request'}))
 });
