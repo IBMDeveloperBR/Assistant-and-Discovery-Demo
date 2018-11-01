@@ -7,7 +7,7 @@ const Assistant = require('watson-developer-cloud/assistant/v1');
 // Autenticacao no Assistant
 const assistantClient = new Assistant({
   version: '2018-07-10',
-  iam_apikey: process.env.APIKEY
+  iam_apikey: process.env.ASSISTANT_APIKEY
 });
 /**
 const assistantClient = new Assistant({
