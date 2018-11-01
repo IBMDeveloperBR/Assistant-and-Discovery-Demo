@@ -6,11 +6,16 @@ const Assistant = require('watson-developer-cloud/assistant/v1');
 
 // Autenticacao no Assistant
 const assistantClient = new Assistant({
+  version: '2018-07-10',
+  iam_apikey: process.env.APIKEY
+});
+/**
+const assistantClient = new Assistant({
     username: process.env.ASSISTANT_USERNAME,
     password: process.env.ASSISTANT_PASSWORD,
     version: '2018-07-10',
 });
-
+*/
 const assistant = {
     message: (msg, ctx) => {
         // Ligacao com workspace e montagem dos parametros de requisicao
