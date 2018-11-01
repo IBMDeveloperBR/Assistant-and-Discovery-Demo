@@ -3,13 +3,22 @@
  */
 
 const Assistant = require('watson-developer-cloud/assistant/v1');
+let assistantClient;
 
 // Autenticacao no Assistant
-const assistantClient = new Assistant({
-    username: process.env.ASSISTANT_USERNAME,
-    password: process.env.ASSISTANT_PASSWORD,
-    version: '2018-07-10',
-});
+if(process.env.ASSISTANT_APIKEY){
+    /********  NOVA AUTENTICAÇÃO PARA NOVAS INSTANCIAS  *********/
+    assistantClient = new Assistant({
+        iam_apikey: process.env.ASSISTANT_APIKEY,
+        version: '2018-07-10',
+    });
+} else {
+    assistantClient = new Assistant({
+        username: process.env.ASSISTANT_USERNAME,
+        password: process.env.ASSISTANT_PASSWORD,
+        version: '2018-07-10',
+    });
+}
 
 const assistant = {
     message: (msg, ctx) => {
