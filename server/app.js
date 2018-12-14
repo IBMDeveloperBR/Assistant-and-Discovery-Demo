@@ -6,24 +6,14 @@ const helmet = require('helmet');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
-const compress = require('shrink-ray');
+const compress = require('compression');
 const watson = require('./watson');
 
 const ENV = process.env.NODE_ENV;
 
 const app = express();
 
-app.use(compress({
-    cache: (req, res) => {
-        return true;
-    },
-    brotli: {
-        quality: 6
-    },
-    zlib: {
-        quality: 6
-    }
-}));
+app.use(compress());
 
 dotenv.config();
 app.use(morgan(process.env.NODE_ENV || 'dev'));
