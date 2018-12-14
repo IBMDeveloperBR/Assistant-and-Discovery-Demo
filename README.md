@@ -7,6 +7,10 @@ O objetivo dessa aplicação é demostrar como integrar o serviço do Watson Dis
   * [Watson Assistant](https://www.ibm.com/watson/ai-assistant/)
   * [Watson Discovery](https://www.ibm.com/watson/services/discovery/)
 
+## Configurando o Watson Discovery
+
+Use os documentos na pasta `dataset/` para poupular sua instancia no Watson Discovery, basta baixar os arquivos e fazer upload na ferramenta.
+
 ## Arquitetura do Projeto
 
 * Pasta `public/`, contem o frontend
